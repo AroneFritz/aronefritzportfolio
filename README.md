@@ -141,7 +141,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or feedback, reach out through:
 
-- Email: aronefritz@gmail.com
+- Email: lamanilaoarone30@gmail.com
 - GitHub: [@AroneFritz](https://github.com/AroneFritz)
 - Facebook: [Arone Fritz Lamanilao](https://www.facebook.com/arone.lamanilao/)
 
