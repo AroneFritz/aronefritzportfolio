@@ -1,18 +1,27 @@
-# Arone Fritz Portfolio
+# Arone Fritz Portfolio | Web Stack Developer
 
 ![Arone Fritz Portfolio](https://github.com/AroneFritz/aronefritzportfolio/raw/master/public/Arone-Fritz.png)
 
 ## Overview
 
-This is my personal portfolio website showcasing my skills, projects, and experience as a Full Stack Developer. It is built using modern web technologies and follows best practices for performance and accessibility.
+I'm Arone Fritz, a passionate Web Stack Developer with expertise in both frontend and backend technologies. This portfolio showcases my projects, skills, and professional experience building modern web applications. I specialize in creating responsive, user-friendly interfaces and robust backend systems.
 
-## ✨ Features
+## 💻 My Skills & Expertise
 
-- **Responsive Design**: Optimized for various screen sizes and devices.
-- **Interactive Animations**: Smooth and engaging animations using Framer Motion.
-- **SEO Optimized**: Built with best practices for search engine optimization.
-- **Fast Performance**: Optimized for fast loading times and performance.
-- **Accessible**: Follows accessibility best practices to ensure a great experience for all users.
+- **Frontend Development**: React.js, Next.js, HTML5, CSS3, JavaScript (ES6+), TypeScript
+- **Backend Development**: Node.js, Express, RESTful APIs, GraphQL
+- **Database Management**: MongoDB, PostgreSQL, MySQL
+- **UI/UX Design**: Tailwind CSS, Framer Motion, Responsive Design
+- **DevOps & Tools**: Git, GitHub, Vercel, Netlify, CI/CD pipelines
+- **Testing & Quality**: Jest, React Testing Library, ESLint
+
+## ✨ Portfolio Features
+
+- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Interactive Animations**: Smooth transitions and engaging UI elements
+- **Dynamic Content**: Server-side rendering with Next.js
+- **Modern UI**: Clean, accessible design with Tailwind CSS
+- **Performance Optimized**: Fast loading times and SEO best practices
 
 ## 🛠️ Tech Stack
 
