@@ -17,13 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <meta property="og:title" content="Arone Fritz Lamanilao | Web Stack Developer" />
-        <meta property="og:description" content="Personal portfolio website showcasing my projects and skills as a Web Stack Developer" />
-        <meta property="og:image" content="https://aronefritzportfoliov2.netlify.app/og-image.png" />
-        <meta property="og:url" content="https://aronefritzportfoliov2.netlify.app" />
-        <meta property="og:type" content="website" />
-      </head>
+      <head />
       <body className={poppins.className}>
         <VariantProvider>{children}</VariantProvider>
       </body>
