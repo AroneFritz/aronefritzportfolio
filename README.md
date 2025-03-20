@@ -9,7 +9,7 @@ I'm Arone Fritz, a passionate Web Stack Developer with expertise in both fronten
 ## 💻 My Skills & Expertise
 
 - **Frontend Development**: React.js, Next.js, HTML5, CSS3, JavaScript (ES6+), TypeScript
-- **Backend Development**: Node.js, Express, RESTful APIs, GraphQL
+- **Backend Development**: Node.js, Express, RESTful APIs, GraphQL, Php Laravel
 - **Database Management**: MongoDB, PostgreSQL, MySQL
 - **UI/UX Design**: Tailwind CSS, Framer Motion, Responsive Design
 - **DevOps & Tools**: Git, GitHub, Vercel, Netlify, CI/CD pipelines
