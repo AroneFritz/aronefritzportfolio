@@ -1,5 +1,5 @@
 const site_url =
-  process.env.NEXT_PUBLIC_APP_URL || "https://aronefritzportfoliov2.netlify.app";
+  process.env.NEXT_PUBLIC_APP_URL || "https://aronefritzportfolio.vercel.app";
 
 // Add a fixed timestamp to force cache refreshing
 const timestamp = "20240321" + Math.floor(Math.random() * 1000);
