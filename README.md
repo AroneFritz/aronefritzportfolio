@@ -1,10 +1,10 @@
-# Portfolio Project
+# Arone Fritz Portfolio
 
-![Portfolio Preview](https://raw.githubusercontent.com/AroneFritz/Portfolio-Main/master/public/Arone-Fritz.png)
+![Portfolio Preview](https://raw.githubusercontent.com/AroneFritz/AroneFritz-Portfolio/main/public/portfolio-preview.jpg)
 
-## Overview
+## Professional Web Developer
 
-This is a professional portfolio website showcasing my skills, projects, and experience as a Web Stack Developer. It is built using modern web technologies and follows best practices for performance and accessibility.
+A modern portfolio website showcasing my skills, projects, and experience as a Full Stack Web Developer. This portfolio is designed with a clean, professional aesthetic and features interactive elements to engage visitors.
 
 ## Features
 
@@ -29,10 +29,10 @@ This is a professional portfolio website showcasing my skills, projects, and exp
 
 ```bash
 # Clone the repository
-git clone https://github.com/AroneFritz/Portfolio-Main.git
+git clone https://github.com/AroneFritz/AroneFritz-Portfolio.git
 
 # Navigate to the project directory
-cd Portfolio-Main
+cd AroneFritz-Portfolio
 
 # Install dependencies
 npm install
@@ -52,4 +52,5 @@ This portfolio is deployed on Netlify. The deployment is automated through GitHu
 Feel free to reach out if you have any questions or would like to collaborate!
 
 - **Email**: aronefritz@gmail.com
-- **Website**: [portfolio-arone.netlify.app](https://portfolio-arone.netlify.app)
+- **LinkedIn**: [Arone Fritz Lamanilao](https://www.linkedin.com/in/arone-fritz-lamanilao)
+- **Website**: [arone-portfolio.netlify.app](https://arone-portfolio.netlify.app)
