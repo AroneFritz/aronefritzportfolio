@@ -1,10 +1,10 @@
-# Portfolio Project
+# Arone Fritz Portfolio
 
-![Modern Portfolio Website](https://github.com/user-attachments/assets/4f82669c-9a5a-4761-a927-2f54f0f64169)
+![Arone Fritz Portfolio](https://github.com/AroneFritz/aronefritzportfolio/raw/master/public/Arone-Fritz.png)
 
 ## Overview
 
-This project is a portfolio website template showcasing skills, projects, and experience. It is built using modern web technologies and follows best practices for performance and accessibility.
+This is my personal portfolio website showcasing my skills, projects, and experience as a Full Stack Developer. It is built using modern web technologies and follows best practices for performance and accessibility.
 
 ## ✨ Features
 
@@ -26,7 +26,7 @@ This project is a portfolio website template showcasing skills, projects, and ex
 ## 📁 Project Structure
 
 ```
-/the-portfolio
+/main-portfolio
 ├── .next/
 │   ├── cache/
 │   ├── server/
@@ -63,7 +63,7 @@ This project is a portfolio website template showcasing skills, projects, and ex
 - **`app`**: Contains the main application components.
 - **`components`**: Contains reusable UI components.
 - **`utils`**: Contains utility functions.
-- **`src/dummy.json`**: Contains dummy data for the portfolio.
+- **`src/dummy.json`**: Contains data for the portfolio.
 
 ### Configuration Files
 
@@ -76,7 +76,7 @@ This project is a portfolio website template showcasing skills, projects, and ex
 ### Prerequisites
 
 - Node.js 18+ installed
-- pnpm or npm package manager
+- npm package manager
 - Git
 
 ### Installation Steps
@@ -84,13 +84,13 @@ This project is a portfolio website template showcasing skills, projects, and ex
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/AroneFritz/main-portfolio.git
+   git clone https://github.com/AroneFritz/aronefritzportfolio.git
    ```
 
 2. Navigate to the project directory:
 
    ```sh
-   cd the-portfolio
+   cd aronefritzportfolio
    ```
 
 3. Install the dependencies:
@@ -102,7 +102,7 @@ This project is a portfolio website template showcasing skills, projects, and ex
 4. Start the development server:
 
    ```sh
-   npm start
+   npm run dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
@@ -138,4 +138,4 @@ For questions or feedback, reach out through:
 
 ---
 
-Built with ❤️ by [Arone Fritz Lamanilao]
+Built with ❤️ by Arone Fritz Lamanilao
