@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { siteConfig } from "./site";
+import { siteConfig, openGraphImage } from "./site";
 
 export const formatDate = (date: string) => {
   const newDate = new Date(date);
@@ -50,12 +50,13 @@ export function constructMetadata({
       title,
       description,
       siteName: title,
+      images: openGraphImage.images,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: openGraphImage.images,
       creator: "@aronefritz",
     },
     icons,

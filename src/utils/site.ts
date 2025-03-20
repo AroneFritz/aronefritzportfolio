@@ -16,3 +16,13 @@ export const siteConfig = {
   },
   mailSupport: "aronefritz@gmail.com",
 };
+
+export const openGraphImage = {
+  images: [{
+    url: `${site_url}/og-image.png?v=${timestamp}`,
+    width: 1200,
+    height: 630,
+    alt: "Arone Fritz Lamanilao | Web Stack Developer",
+  }],
+  type: 'website',
+};
