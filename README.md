@@ -1,6 +1,6 @@
 # Arone Fritz Portfolio
 
-![Portfolio Preview](https://raw.githubusercontent.com/AroneFritz/AroneFritz-Portfolio/main/public/Arone-Fritz.png)
+![Portfolio Preview](https://raw.githubusercontent.com/AroneFritz/AroneFritz-Portfolio/main/Arone-Fritz.png)
 
 ## Professional Web Developer & Full Stack Developer
 
