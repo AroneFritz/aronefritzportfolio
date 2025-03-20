@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "Professional portfolio website showcasing my projects and skills as a Web Stack Developer. Explore my latest work, technical expertise, and professional experience.",
   url: site_url,
-  ogImage: `${site_url}/portfolio-preview.jpg`,
+  ogImage: `${site_url}/Arone-Fritz.png`,
   links: {
     twitter: "https://twitter.com/aronefritz",
     github: "https://github.com/AroneFritz/AroneFritz-Portfolio",
