@@ -2,7 +2,7 @@
 
 ![Portfolio Preview](https://raw.githubusercontent.com/AroneFritz/AroneFritz-Portfolio/main/public/Arone-Fritz.png)
 
-## Professional Web Developer
+## Professional Web Developer & Full Stack Developer
 
 A modern portfolio website showcasing my skills, projects, and experience as a Full Stack Web Developer. This portfolio is designed with a clean, professional aesthetic and features interactive elements to engage visitors.
 
