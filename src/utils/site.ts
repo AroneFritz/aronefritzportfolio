@@ -1,5 +1,5 @@
 const site_url =
-  process.env.NEXT_PUBLIC_APP_URL || "https://aronefritzportfolio.netlify.app";
+  process.env.NEXT_PUBLIC_APP_URL || "https://aronefritzportfoliov2.netlify.app";
 
 export const siteConfig = {
   name: "Arone Fritz Lamanilao | Web Stack Developer",
