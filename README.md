@@ -1,141 +1,55 @@
 # Portfolio Project
 
-![Modern Portfolio Website](https://github.com/user-attachments/assets/4f82669c-9a5a-4761-a927-2f54f0f64169)
+![Portfolio Preview](https://raw.githubusercontent.com/AroneFritz/Portfolio-Main/master/public/Arone-Fritz.png)
 
 ## Overview
 
-This project is a portfolio website template showcasing skills, projects, and experience. It is built using modern web technologies and follows best practices for performance and accessibility.
+This is a professional portfolio website showcasing my skills, projects, and experience as a Web Stack Developer. It is built using modern web technologies and follows best practices for performance and accessibility.
 
-## ✨ Features
+## Features
 
-- **Responsive Design**: Optimized for various screen sizes and devices.
-- **Interactive Animations**: Smooth and engaging animations using Framer Motion.
-- **SEO Optimized**: Built with best practices for search engine optimization.
-- **Fast Performance**: Optimized for fast loading times and performance.
-- **Accessible**: Follows accessibility best practices to ensure a great experience for all users.
+- **Responsive Design**: Works seamlessly on all devices and screen sizes
+- **Modern UI/UX**: Clean and intuitive interface with smooth animations
+- **Project Showcase**: Detailed project galleries with descriptions
+- **Skills Display**: Visual representation of technical skills
+- **Contact Form**: Easy way for potential clients/employers to reach out
+- **Timeline**: Professional journey and experience timeline
+- **Testimonials**: Feedback from clients and colleagues
 
-## 🛠️ Tech Stack
+## Technologies Used
 
-- **Frontend Framework**: Next.js 15
-- **UI Library**: React 19
-- **Type Safety**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Code Quality**: ESLint & Prettier
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Responsive Design
 
-## 📁 Project Structure
+## Local Development
 
-```
-/the-portfolio
-├── .next/
-│   ├── cache/
-│   ├── server/
-│   └── static/
-├── public/
-├── src/
-│   ├── app/
-│   ├── components/
-│   ├── utils/
-│   └── dummy.json
-├── .eslintrc.json
-├── .env
-├── .gitignore
-├── next-env.d.ts
-├── next.config.mjs
-├── package.json
-├── postcss.config.js
-├── README.md
-├── tailwind.config.ts
-└── tsconfig.json
+```bash
+# Clone the repository
+git clone https://github.com/AroneFritz/Portfolio-Main.git
+
+# Navigate to the project directory
+cd Portfolio-Main
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-## Project Details
+Visit `http://localhost:3000` to view the website in development mode.
 
-### Technologies Used
+## Deployment
 
-- **Next.js**: A React framework for server-side rendering and static site generation.
-- **React**: A JavaScript library for building user interfaces.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+This portfolio is deployed on Netlify. The deployment is automated through GitHub integration.
 
-### Key Files and Directories
+## Contact
 
-- **`app`**: Contains the main application components.
-- **`components`**: Contains reusable UI components.
-- **`utils`**: Contains utility functions.
-- **`src/dummy.json`**: Contains dummy data for the portfolio.
+Feel free to reach out if you have any questions or would like to collaborate!
 
-### Configuration Files
-
-- **`tailwind.config.ts`**: Tailwind CSS configuration.
-- **`tsconfig.json`**: TypeScript configuration.
-- **`next.config.mjs`**: Next.js configuration.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ installed
-- pnpm or npm package manager
-- Git
-
-### Installation Steps
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/AroneFritz/main-portfolio.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```sh
-   cd the-portfolio
-   ```
-
-3. Install the dependencies:
-
-   ```sh
-   npm install
-   ```
-
-4. Start the development server:
-
-   ```sh
-   npm start
-   ```
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-### Code Style Guidelines
-
-- Follow the ESLint configuration
-- Write meaningful commit messages
-- Add appropriate documentation
-- Ensure all tests pass
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-For questions or feedback, reach out through:
-
-- Email: aronefritz@gmail.com
-- GitHub: [@AroneFritz](https://github.com/AroneFritz)
-- Facebook: [Arone Fritz Lamanilao](https://www.facebook.com/arone.lamanilao/)
-
----
-
-Built with ❤️ by [Arone Fritz Lamanilao]
+- **Email**: aronefritz@gmail.com
+- **Website**: [portfolio-arone.netlify.app](https://portfolio-arone.netlify.app)
