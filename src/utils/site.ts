@@ -1,8 +1,9 @@
 const site_url =
   process.env.NEXT_PUBLIC_APP_URL || "https://aronefritzportfolio.vercel.app";
 
-// Add a fixed timestamp to force cache refreshing
-const timestamp = "20240321" + Math.floor(Math.random() * 1000);
+// Use a static timestamp to avoid hydration errors
+// This will still force cache refreshing but won't change between server and client
+const timestamp = "20240321-v1";
 
 export const siteConfig = {
   name: "Arone Fritz Lamanilao | Web Stack Developer",
