@@ -1,4 +1,5 @@
-import { v2 as cloudinary } from 'cloudinary';
+// Import the cloudinary package - https://www.npmjs.com/package/cloudinary
+const cloudinary = require('cloudinary').v2;
 
 // Configure Cloudinary
 cloudinary.config({
@@ -10,7 +11,7 @@ cloudinary.config({
 /**
  * Upload an image to Cloudinary
  * @param file Image file buffer
- * @param folder Folder name in Cloudinary
+ * @param options Options for upload
  * @returns Cloudinary upload result
  */
 export async function uploadImage(file: ArrayBuffer, options: { folder?: string; public_id?: string } = {}) {
