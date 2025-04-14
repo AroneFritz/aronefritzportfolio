@@ -5,6 +5,7 @@ import { InfiniteScroll } from "./ui/InfiniteScroll";
 import { SlideIn, Transition } from "./ui/Transitions";
 import { SectionHeading } from "./ui/Typography";
 import Image from "next/image";
+import { useState } from "react";
 
 const Testimonials = ({ testimonials }: { testimonials: ITestimonial[] }) => {
   return (
@@ -15,12 +16,6 @@ const Testimonials = ({ testimonials }: { testimonials: ITestimonial[] }) => {
         <SlideIn className="">Clients Say</SlideIn>
       </SectionHeading>
       <Testimonial testimonials={testimonials} speed="normal" pauseOnHover />
-      <Testimonial
-        testimonials={testimonials}
-        pauseOnHover
-        speed="normal"
-        direction="left"
-      />
     </section>
   );
 };
@@ -34,6 +29,21 @@ interface TestimonialProps {
   pauseOnHover?: boolean;
   className?: string;
 }
+
+const TestimonialImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <Image
+      src={imageError ? "/profile-icon.png" : src}
+      width={50}
+      height={50}
+      alt={alt}
+      className="object-cover size-10 rounded-full border border-white/10"
+      onError={() => setImageError(true)}
+    />
+  );
+};
 
 const Testimonial = ({
   testimonials,
@@ -52,7 +62,7 @@ const Testimonial = ({
         {testimonials.map((val) => (
           <li
             key={val._id}
-            className="md:p-6 p-4 bg-secondary md:w-[450px] w-[300px] rounded-2xl space-y-2 relative overflow-hidden z-0"
+            className="md:p-6 p-4 bg-secondary/80 md:w-[450px] w-[300px] rounded-2xl space-y-2 relative overflow-hidden z-0 backdrop-blur-sm border border-white/5"
           >
             <div className="relative">
               <span className="text-9xl absolute -top-9 -left-2 size-10 text-[#4f4f4f]">
@@ -63,13 +73,7 @@ const Testimonial = ({
               </p>
             </div>
             <div className="flex gap-3 pt-6">
-              <Image
-                src={val.image.url}
-                width={50}
-                height={50}
-                alt={val.name}
-                className="object-scale-down size-10 bg-black rounded-full"
-              />
+              <TestimonialImage src={val.image.url} alt={val.name} />
               <div>
                 <h4 className="md:font-semibold font-medium">{val.name}</h4>
                 <h5 className="md:text-sm text-xs opacity-60">
@@ -77,7 +81,7 @@ const Testimonial = ({
                 </h5>
               </div>
             </div>
-            <span className="absolute -bottom-6 -z-10 -right-0 ">
+            <span className="absolute -bottom-6 -z-10 -right-0 opacity-50">
               <svg
                 width="80"
                 height="176"

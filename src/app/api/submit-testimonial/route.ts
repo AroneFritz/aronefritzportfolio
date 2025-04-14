@@ -22,9 +22,9 @@ export async function POST(req: NextRequest) {
     // Generate ID for the testimonial
     const testimonialId = uuidv4();
     
-    // Handle image upload
-    let imageUrl = "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/default-avatar.png";
-    let publicId = "portfolio3/default-avatar.png";
+    // Set default profile icon path
+    let imageUrl = "/profile-icon.png";
+    let publicId = "default/profile-icon";
     
     if (imageFile) {
       const bytes = await imageFile.arrayBuffer();
