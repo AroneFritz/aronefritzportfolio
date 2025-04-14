@@ -51,9 +51,9 @@ const TestimonialForm = () => {
     e.preventDefault();
     
     // Validate review length
-    if (formData.review.length < 20) {
+    if (formData.review.length < 5) {
       setStatus("ERROR");
-      setStatusText("Please provide a more detailed review (at least 20 characters)");
+      setStatusText("Please provide a review (at least 5 characters)");
       return;
     }
     
