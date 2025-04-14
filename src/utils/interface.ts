@@ -50,6 +50,7 @@ export interface Project {
   title: string;
   sequence: number;
   image: Image;
+  images?: Image[];
   description: string;
   techStack: string[];
   _id: string;

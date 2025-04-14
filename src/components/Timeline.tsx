@@ -40,7 +40,7 @@ const Timeline = ({ timeline }: ExperienceProps) => {
           >
             {/* Timeline dot indicator */}
             <motion.div 
-              className="absolute left-[20px] md:left-[120px] w-4 h-4 bg-primary rounded-full -ml-[7px] mt-6"
+              className="absolute left-[20px] md:left-[120px] w-4 h-4 bg-primary rounded-full -ml-[7px] mt-10"
               initial={{ scale: 0.8 }}
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -52,56 +52,42 @@ const Timeline = ({ timeline }: ExperienceProps) => {
               />
             </motion.div>
             
-            <div className="flex items-center justify-between md:gap-8 pl-8 md:pl-16">
-              <span className="max-md:hidden text-white/40">0{index + 1}</span>
-              <div className="md:text-5xl text-xl md:font-semibold flex-1 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-white transition-all duration-300">
+            <div className="pl-12 md:pl-24">
+              <div className="md:text-6xl text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-white transition-all duration-300">
                 {exp.jobTitle}
               </div>
-            </div>
-            <div className="md:pl-20 pl-8 py-2 text-foreground/50 max-md:text-sm flex items-center justify-between">
-              <motion.span 
-                className="font-medium"
-                initial={{ opacity: 0.6 }}
-                whileHover={{ opacity: 1 }}
-              >
+              <div className="text-white/60 text-lg mt-2">
                 {exp.company_name}
-              </motion.span>
-              <motion.span 
-                className="italic text-sm"
-                initial={{ opacity: 0.6 }}
-                whileHover={{ opacity: 1 }}
+              </div>
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: hover === index ? "auto" : 0 }}
+                transition={{ duration: 0.5 }}
+                className="overflow-hidden mt-3"
               >
-                {exp.jobLocation}
-              </motion.span>
+                <motion.p 
+                  className="text-foreground/60 py-2"
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: hover === index ? 0 : 10, opacity: hover === index ? 1 : 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                >
+                  {exp.summary}
+                </motion.p>
+                <motion.ul className="list-disc list-inside space-y-1">
+                  {exp.bulletPoints.map((point, idx) => (
+                    <motion.li 
+                      key={idx} 
+                      className="text-foreground/80 max-md:text-sm"
+                      initial={{ x: -10, opacity: 0 }}
+                      animate={{ x: hover === index ? 0 : -10, opacity: hover === index ? 1 : 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 + idx * 0.05 }}
+                    >
+                      {point}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
             </div>
-            <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: hover === index ? "auto" : 0 }}
-              transition={{ duration: 0.5 }}
-              className="overflow-hidden md:pl-20 pl-8"
-            >
-              <motion.p 
-                className="text-foreground/60 py-2"
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: hover === index ? 0 : 10, opacity: hover === index ? 1 : 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              >
-                {exp.summary}
-              </motion.p>
-              <motion.ul className="list-disc list-inside space-y-1">
-                {exp.bulletPoints.map((point, idx) => (
-                  <motion.li 
-                    key={idx} 
-                    className="text-foreground/80 max-md:text-sm"
-                    initial={{ x: -10, opacity: 0 }}
-                    animate={{ x: hover === index ? 0 : -10, opacity: hover === index ? 1 : 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 + idx * 0.05 }}
-                  >
-                    {point}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
           </Transition>
         ))}
       </div>

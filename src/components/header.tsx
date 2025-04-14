@@ -51,7 +51,7 @@ const Header = ({ social }: HeaderProps) => {
         initial={false}
         animate={isActive ? "open" : "closed"}
         variants={variants}
-        className="absolute top-0 right-0 md:-top-6 md:-right-6 w-dvw md:w-[480px] h-dvh md:h-[calc(100dvh_-_2.5rem)] bg-primary"
+        className="absolute top-0 right-0 md:-top-6 md:-right-6 w-dvw md:w-[480px] h-dvh md:h-[calc(100dvh_-_2.5rem)] bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500"
       >
         {isActive && (
           <nav className="flex justify-between flex-col w-full h-full px-10 pt-[100px] pb-[50px]">
@@ -76,7 +76,7 @@ const Header = ({ social }: HeaderProps) => {
                         whileHover="whileHover"
                         whileTap="whileHover"
                         exit="exit"
-                        className="text-5xl text-background flex items-center justify-between"
+                        className="text-5xl text-white flex items-center justify-between"
                       >
                         <motion.span
                           variants={{
@@ -107,7 +107,7 @@ const Header = ({ social }: HeaderProps) => {
                   <MotionLink
                     href={url}
                     target="_blank"
-                    className=" w-1/2 mt-1 text-background"
+                    className="w-1/2 mt-1 text-white/80 hover:text-white transition-colors"
                     variants={slideIn}
                     custom={i}
                     initial="initial"
@@ -150,7 +150,7 @@ function Button({
         transition={{ duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] }}
       >
         <motion.div
-          className="bg-primary h-full w-full grid place-items-center text-black"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full w-full grid place-items-center text-white"
           onClick={() => {
             toggleMenu();
           }}

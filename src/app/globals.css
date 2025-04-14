@@ -51,6 +51,9 @@ html {
 @layer base {
   body {
     @apply bg-background text-foreground overflow-x-hidden;
+    background: linear-gradient(to bottom right, rgba(49, 46, 129, 0.2), rgba(76, 29, 149, 0.15), rgba(157, 23, 77, 0.2));
+    background-attachment: fixed;
+    background-color: #0a0a0c;
   }
 
   *::-webkit-scrollbar-thumb {
@@ -63,7 +66,52 @@ html {
 }
 
 .blob {
-  background: conic-gradient(from 2.35rad, #c76000, rgba(7, 29, 228, 0.5));
+  background: conic-gradient(from 2.35rad, rgba(236, 72, 153, 0.15), rgba(79, 70, 229, 0.25));
+  animation: blob-move 20s infinite alternate ease-in-out;
+}
+
+.blob-secondary {
+  background: conic-gradient(from 0.5rad, rgba(79, 70, 229, 0.2), rgba(236, 72, 153, 0.15));
+  animation: blob-move-secondary 25s infinite alternate ease-in-out;
+}
+
+@keyframes blob-move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5%, 5%) rotate(5deg);
+  }
+  50% {
+    transform: translate(-5%, 10%) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-10%, -5%) rotate(-10deg);
+  }
+  100% {
+    transform: translate(10%, -10%) rotate(10deg);
+  }
+}
+
+@keyframes blob-move-secondary {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-8%, -3%) rotate(-8deg);
+  }
+  40% {
+    transform: translate(5%, -10%) rotate(5deg);
+  }
+  60% {
+    transform: translate(10%, 5%) rotate(10deg);
+  }
+  80% {
+    transform: translate(-5%, 8%) rotate(-3deg);
+  }
+  100% {
+    transform: translate(-10%, -5%) rotate(-10deg);
+  }
 }
 
 .text-reveal {

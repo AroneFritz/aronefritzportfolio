@@ -14,8 +14,8 @@ const primarySkills = ["PHP", "Laravel", "React.js", "Next.js", "JavaScript", "T
 
 // Define skill colors for visual variety
 const skillColors = {
-  "PHP": "from-purple-500 to-blue-600",
-  "Laravel": "from-red-500 to-pink-600",
+  "PHP": "from-purple-600 to-blue-700",
+  "Laravel": "from-red-600 to-pink-700",
   "React.js": "from-cyan-400 to-blue-500",
   "Next.js": "from-neutral-200 to-zinc-400",
   "JavaScript": "from-yellow-400 to-amber-500",
@@ -85,14 +85,11 @@ function Skills({ skills }: SkillsProps) {
   const safeSkills = Array.isArray(skills) ? skills : [];
   
   return (
-    <section id="skills" className="py-10 relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute -top-20 left-1/4 w-64 h-64 rounded-full bg-primary/20 blur-[100px] -z-10" />
-      <div className="absolute top-40 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-[120px] -z-10" />
-      <div className="absolute bottom-20 left-1/3 w-72 h-72 rounded-full bg-purple-500/10 blur-[150px] -z-10" />
+    <section id="skills" className="py-16 md:py-20 relative overflow-hidden">
+      {/* Background styling aligns with the About section */}
       
       <motion.div 
-        className="w-full mx-auto text-center mb-10 px-4"
+        className="w-full mx-auto text-center mb-12 px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -124,15 +121,15 @@ function Skills({ skills }: SkillsProps) {
             <motion.span
               className={`md:text-8xl text-4xl font-extrabold uppercase tracking-tighter px-2 
                 bg-gradient-to-br ${getSkillColor(skillName)} bg-clip-text text-transparent
-                drop-shadow-[0_2px_8px_rgba(var(--primary),0.5)]`}
+                drop-shadow-[0_4px_12px_rgba(var(--primary),0.7)]`}
             >
               {skillName}
             </motion.span>
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full opacity-0"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent rounded-full opacity-0"
               initial={{ opacity: 0, x: -100 }}
               animate={{ 
-                opacity: [0, 0.5, 0],
+                opacity: [0, 0.7, 0],
                 x: [100, 0, -100],
               }}
               transition={{ 
@@ -148,9 +145,9 @@ function Skills({ skills }: SkillsProps) {
       <ParallaxText baseVelocity={-4}>
         {safeSkills
           .filter(skill => skill?.enabled && skill?.name && skill.name !== "PHP" && skill.name !== "Laravel")
-          .map((skill) => (
+          .map((skill, index) => (
             <motion.span
-              key={skill._id || Math.random()}
+              key={skill._id || `skill-1-${index}`}
               className={`md:text-7xl text-xl font-semibold uppercase tracking-tighter px-3 mx-1
                 ${isPrimary(skill.name)
                   ? `bg-gradient-to-r ${getSkillColor(skill.name)} bg-clip-text text-transparent font-bold drop-shadow-sm`
@@ -170,9 +167,9 @@ function Skills({ skills }: SkillsProps) {
       <ParallaxText baseVelocity={4}>
         {safeSkills
           .filter(skill => skill?.enabled && skill?.name && skill.name !== "PHP" && skill.name !== "Laravel")
-          .map((skill) => (
+          .map((skill, index) => (
             <motion.span
-              key={skill._id || Math.random()}
+              key={skill._id || `skill-2-${index}`}
               className={`md:text-7xl text-xl font-semibold uppercase tracking-tighter px-3 mx-1
                 ${isPrimary(skill.name)
                   ? `bg-gradient-to-r ${getSkillColor(skill.name)} bg-clip-text text-transparent font-bold drop-shadow-sm`
@@ -192,9 +189,9 @@ function Skills({ skills }: SkillsProps) {
       <ParallaxText baseVelocity={-5}>
         {safeSkills
           .filter(skill => skill?.enabled && skill?.name && skill.name !== "PHP" && skill.name !== "Laravel")
-          .map((skill) => (
+          .map((skill, index) => (
             <motion.span
-              key={skill._id || Math.random()}
+              key={skill._id || `skill-3-${index}`}
               className={`md:text-7xl text-xl font-semibold uppercase tracking-tighter px-3 mx-1
                 ${isPrimary(skill.name)
                   ? `bg-gradient-to-r ${getSkillColor(skill.name)} bg-clip-text text-transparent font-bold drop-shadow-sm`

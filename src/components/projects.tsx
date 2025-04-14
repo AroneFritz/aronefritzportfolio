@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { SectionHeading, TextReveal } from "./ui/Typography";
 import { Project } from "../utils/interface";
 import ProjectDialog from "./ProjectDialog";
-import { ArrowUpRight } from "./ui/Icons";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "./ui/Icons";
 import Filters from "./filters";
 import { useVariants } from "../utils/hooks";
 import { SlideIn, Transition } from "./ui/Transitions";
@@ -16,7 +16,7 @@ interface ProjectsProps {
 }
 
 function Projects({ projects }: ProjectsProps) {
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [filteredProjects, setFilteredProjects] = useState(projects.filter(project => project.enabled === true));
   const [filterValue, setFilterValue] = useState("");
   const [showMore, setShowMore] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -25,11 +25,14 @@ function Projects({ projects }: ProjectsProps) {
 
   useEffect(() => {
     const applyFilters = (data: Project[], filterValues: string) => {
+      // First filter only enabled projects
+      const enabledProjects = data.filter(project => project.enabled === true);
+      
       if (!filterValues || filterValues === "all") {
-        return data;
+        return enabledProjects;
       }
 
-      return data.filter((project) =>
+      return enabledProjects.filter((project) =>
         project.techStack.some((tech) => filterValues === tech.trim())
       );
     };
@@ -46,7 +49,7 @@ function Projects({ projects }: ProjectsProps) {
         <SlideIn>works</SlideIn>
       </SectionHeading>
       <Filters
-        projects={projects}
+        projects={projects.filter(project => project.enabled === true)}
         filterValue={filterValue}
         setFilterValue={setFilterValue}
       />
@@ -94,9 +97,11 @@ function Projects({ projects }: ProjectsProps) {
 
 export default Projects;
 
-const Card = ({ title, image, description }: Project) => {
+const Card = ({ title, image, images, description }: Project) => {
   const [hover, setHover] = useState(false);
   const { setVariant } = useVariants();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const hasMultipleImages = images && images.length > 1;
 
   const mouseEnter = () => {
     setHover(true);
@@ -106,6 +111,25 @@ const Card = ({ title, image, description }: Project) => {
     setHover(false);
     setVariant("DEFAULT");
   };
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (hasMultipleImages) {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (hasMultipleImages) {
+      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
+
+  // Get the current image URL
+  const currentImageUrl = hasMultipleImages 
+    ? images[currentImageIndex].url 
+    : image.url;
 
   return (
     <motion.div
@@ -155,14 +179,47 @@ const Card = ({ title, image, description }: Project) => {
       <motion.div 
         className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
+      
+      {/* Image */}
       <motion.img
-        src={image.url}
+        src={currentImageUrl}
         width={500}
         height={500}
         alt={title}
         className="object-cover h-full w-full object-center rounded-xl md:rounded-t-3xl transition-transform duration-500 group-hover:scale-105"
         whileHover={{ scale: 1.05 }}
       />
+      
+      {/* Image navigation arrows - show only if project has multiple images */}
+      {hasMultipleImages && (
+        <>
+          <div 
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full cursor-pointer z-20 opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={prevImage}
+          >
+            <ChevronLeft className="w-5 h-5 text-white" />
+          </div>
+          <div 
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full cursor-pointer z-20 opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={nextImage}
+          >
+            <ChevronRight className="w-5 h-5 text-white" />
+          </div>
+          
+          {/* Image indicator dots */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+            {images.map((_, index) => (
+              <motion.div 
+                key={index}
+                className={`w-2 h-2 rounded-full ${index === currentImageIndex ? 'bg-white' : 'bg-white/50'}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </motion.div>
   );
 };

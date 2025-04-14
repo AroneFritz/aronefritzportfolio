@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef, useState, useEffect } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -27,6 +27,9 @@ export function ParallaxText({
   className,
   wrapperClassName,
 }: ParallaxProps) {
+  // Add state to track if component is mounted (client-side)
+  const [isMounted, setIsMounted] = useState(false);
+  
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -51,8 +54,13 @@ export function ParallaxText({
   const x = useTransform(baseX, (v) => `${wrap(0, -25, v)}%`);
   const directionFactor = useRef<number>(1);
 
+  // Only run animation on client side
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   useAnimationFrame((t, delta) => {
-    if (!delta) return;
+    if (!delta || !isMounted) return;
     
     const adjustedBaseVelocity = baseVelocity * 0.1;
     let moveBy =
@@ -79,7 +87,7 @@ export function ParallaxText({
           "w-max flex items-center justify-center gap-2 md:py-3 py-1",
           className
         )}
-        style={{ x, skew: skewVelocityFactor }}
+        style={isMounted ? { x, skew: skewVelocityFactor } : {}}
       >
         {safeChildren}
         {safeChildren}

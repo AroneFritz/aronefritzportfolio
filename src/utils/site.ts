@@ -10,7 +10,7 @@ export const siteConfig = {
   description:
     "Personal portfolio website showcasing my projects and skills as a Web Stack Developer",
   url: site_url,
-  ogImage: `${site_url}/og-image.png?v=${timestamp}`,
+  ogImage: `${site_url}/Arone-Fritz.png?v=${timestamp}`,
   links: {
     twitter: "https://twitter.com/aronefritz",
     github: "https://github.com/AroneFritz/aronefritzportfolio",
@@ -20,7 +20,7 @@ export const siteConfig = {
 
 export const openGraphImage = {
   images: [{
-    url: `${site_url}/og-image.png?v=${timestamp}`,
+    url: `${site_url}/Arone-Fritz.png?v=${timestamp}`,
     width: 1200,
     height: 630,
     alt: "Arone Fritz Lamanilao | Web Stack Developer",

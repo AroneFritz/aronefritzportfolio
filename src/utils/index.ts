@@ -3,8 +3,14 @@ import { siteConfig, openGraphImage } from "./site";
 
 export const formatDate = (date: string) => {
   const newDate = new Date(date);
-
-  const month = newDate.toLocaleString("en-US", { month: "long" }); // Full month name
+  
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  
+  const monthIndex = newDate.getMonth();
+  const month = months[monthIndex];
   const year = newDate.getFullYear();
 
   return { month, year };

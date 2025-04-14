@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 import { About } from "../utils/interface";
 import { SlideIn, Transition } from "./ui/Transitions";
@@ -14,16 +15,54 @@ interface HeroProps {
 }
 
 const Hero = ({ about }: HeroProps) => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Calculate normalized mouse position (0-1)
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  // Calculate transforms based on mouse position (px values)
+  const blob1X = (mousePosition.x - 0.5) * -40; // Move opposite to cursor
+  const blob1Y = (mousePosition.y - 0.5) * -40;
+  
+  const blob2X = (mousePosition.x - 0.5) * 60; // Move with cursor but more dramatically
+  const blob2Y = (mousePosition.y - 0.5) * 60;
+
   return (
     <section className="h-dvh w-dvw overflow-hidden relative">
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent z-0"
+        className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/15 to-pink-900/20 z-0"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ delay: 1, duration: 1.5 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: 0.5, duration: 1.5 }}
+        style={{
+          backgroundPosition: `${mousePosition.x * 100}% ${mousePosition.y * 100}%`
+        }}
       />
       <Transition>
-        <span className="blob size-1/2 absolute top-20 left-0 blur-[100px]" />
+        <motion.span 
+          className="blob size-1/2 absolute top-20 left-0 blur-[100px]" 
+          style={{
+            transform: `translate(${blob1X}px, ${blob1Y}px)`,
+            background: 'conic-gradient(from 2.35rad, rgba(236, 72, 153, 0.15), rgba(79, 70, 229, 0.25))'
+          }}
+        />
+        <motion.span 
+          className="blob-secondary size-1/3 absolute bottom-20 right-0 blur-[120px]" 
+          style={{
+            transform: `translate(${blob2X}px, ${blob2Y}px)`,
+            background: 'conic-gradient(from 0.5rad, rgba(79, 70, 229, 0.2), rgba(236, 72, 153, 0.15))'
+          }}
+        />
       </Transition>
       <LoaderWrapper>
         <div className="relative h-full w-full">

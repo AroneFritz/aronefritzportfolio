@@ -6,6 +6,7 @@ import Projects from "@/components/projects";
 import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import Testimonials from "@/components/testimonials";
+import TestimonialForm from "@/components/TestimonialForm";
 import Timeline from "@/components/Timeline";
 import { Portfolio } from "@/utils/interface";
 
@@ -36,6 +37,7 @@ export default async function Home() {
       <Services services={services} />
       <Timeline timeline={timeline} />
       <Testimonials testimonials={testimonials} />
+      <TestimonialForm />
       <Contact email={email} social_handle={social_handles} about={about} />
     </main>
   );

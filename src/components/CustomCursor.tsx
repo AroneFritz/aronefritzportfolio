@@ -1,12 +1,13 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, Variants } from "motion/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useVariants } from "../utils/hooks";
 
 function CustomCursor() {
   const { variant } = useVariants();
+  const [isMounted, setIsMounted] = useState(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -16,6 +17,11 @@ function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    setIsMounted(true);
+    
+    // Don't run on server
+    if (typeof window === 'undefined') return;
+    
     const moveCursor = (e: MouseEvent) => {
       requestAnimationFrame(() => {
         // Update position only on animation frame
@@ -51,6 +57,9 @@ function CustomCursor() {
       border: "1px solid white",
     },
   };
+
+  // Don't render anything until client-side
+  if (!isMounted) return null;
 
   return (
     <motion.div

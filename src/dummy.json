@@ -39,10 +39,10 @@
       "jobLocation": "Philippines, Negros Occidental",
       "bulletPoints": [
         "Developed scalable backend services using Python and Django framework.",
-        "\nImplemented user authentication and authorization using OAuth 2.0 and JWT tokens.",
-        "\nDesigned and optimized database schemas for performance and scalability.",
-        "\nImplemented real-time messaging features using WebSockets and Redis.",
-        "\nWorked closely with frontend developers to design APIs and ensure smooth integration with the frontend."
+        "Implemented user authentication and authorization using OAuth 2.0 and JWT tokens.",
+        "Designed and optimized database schemas for performance and scalability.",
+        "Implemented real-time messaging features using WebSockets and Redis.",
+        "Worked closely with frontend developers to design APIs and ensure smooth integration with the frontend."
       ],
       "forEducation": true,
       "enabled": true,
@@ -56,10 +56,10 @@
       "jobLocation": "Manila, Philippines",
       "bulletPoints": [
         "Developed microservices using Node.js and deployed them using Docker containers.",
-        "\nImplemented user authentication and authorization using OAuth 2.0 and JWT tokens.",
-        "\nIntegrated with cloud providers such as AWS and Azure to manage infrastructure resources.",
-        "\nDesigned and implemented RESTful APIs for various platform features.",
-        "\nCollaborated with DevOps engineers to automate deployment and testing processes."
+        "Implemented user authentication and authorization using OAuth 2.0 and JWT tokens.",
+        "Integrated with cloud providers such as AWS and Azure to manage infrastructure resources.",
+        "Designed and implemented RESTful APIs for various platform features.",
+        "Collaborated with DevOps engineers to automate deployment and testing processes."
       ],
       "forEducation": false,
       "enabled": true,
@@ -73,11 +73,10 @@
       "jobLocation": "Cebu, Philippines",
       "bulletPoints": [
         "Implemented user interface components using AngularJS and TypeScript.",
-        "\nCollaborated with backend developers to integrate frontend components with RESTful APIs.",
-        "\nDeveloped custom data visualizations and dashboards using D3.js and Chart.js.",
-        "\nParticipated in sprint planning meetings and provided accurate estimates for feature development.",
-        "\nConducted A/B tests and analyzed user feedback to iterate on product features.",
-        ""
+        "Collaborated with backend developers to integrate frontend components with RESTful APIs.",
+        "Developed custom data visualizations and dashboards using D3.js and Chart.js.",
+        "Participated in sprint planning meetings and provided accurate estimates for feature development.",
+        "Conducted A/B tests and analyzed user feedback to iterate on product features."
       ],
       "forEducation": false,
       "enabled": true,
@@ -91,10 +90,10 @@
       "jobLocation": "Iloilo, Philippines",
       "bulletPoints": [
         "Developed RESTful APIs and integrated third-party services to ingest and process large volumes of data.",
-        "\nDesigned and implemented responsive user interfaces using React.js and Bootstrap.",
-        "\nWorked closely with data scientists to integrate machine learning models into the platform.",
-        "\nOptimized database queries and improved overall system performance.",
-        "\nConducted unit tests and participated in peer code reviews to ensure code quality.\n"
+        "Designed and implemented responsive user interfaces using React.js and Bootstrap.",
+        "Worked closely with data scientists to integrate machine learning models into the platform.",
+        "Optimized database queries and improved overall system performance.",
+        "Conducted unit tests and participated in peer code reviews to ensure code quality."
       ],
       "forEducation": true,
       "enabled": true,
@@ -133,8 +132,8 @@
       "jobLocation": "Negros Occidental, Philippines",
       "bulletPoints": [
         "Design and build full website",
-        " Optimized Site ",
-        " SEO implemented"
+        "Optimized Site",
+        "SEO implemented"
       ],
       "forEducation": true,
       "enabled": true,
@@ -420,14 +419,63 @@
     {
       "liveurl": "#",
       "githuburl": "#",
-      "title": "Laravel E-learning Platform",
+      "title": "Barangay Management System",
+      "sequence": 17,
+      "image": {
+        "public_id": "barangay-management",
+        "url": "/projects/Barangay.png"
+      },
+      "images": [
+        {
+          "public_id": "barangay-management-1",
+          "url": "/projects/Barangay.png"
+        },
+        {
+          "public_id": "barangay-management-2",
+          "url": "/projects/login.png"
+        }
+      ],
+      "description": "Developed a comprehensive management system for local government units (Barangays) in the Philippines. Features include resident information management, certificate issuance, complaint tracking, inventory management, and financial reporting. The system streamlines administrative processes and improves service delivery to community residents.",
+      "techStack": [
+        "PHP",
+        "UI",
+        "MySQL",
+        "Bootstrap",
+        "jQuery",
+        "Ajax",
+        "PDO"
+      ],
+      "_id": "65b3d969d017f6b49c778c4a",
+      "enabled": true
+    },
+    {
+      "liveurl": "#",
+      "githuburl": "#",
+      "title": "Rental Management System",
       "sequence": 16,
       "image": {
-        "public_id": "laravel-elearning",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706284812399-jr7rqj"
+        "public_id": "rental-management",
+        "url": "/projects/rentease.png"
       },
-      "description": "Built an educational platform using Laravel, PHP, and MySQL that enables instructors to create courses with video lectures, quizzes, and assignments. Implemented user authentication, role-based permissions, payment gateway integration, and a responsive admin dashboard with course analytics.",
-      "techStack": ["PHP", "Laravel", "Vue.js", "MySQL", "Redis", "AWS"],
+      "images": [
+        {
+          "public_id": "rental-management",
+          "url": "/projects/rentease.png"
+        },
+        {
+          "public_id": "rental-management-2",
+          "url": "/projects/rentease2.png"
+        }
+      ],
+      "description": "Developed a comprehensive property rental management system using Laravel and PHP that simplifies property listings, tenant applications, lease management, and payment processing. Implemented secure user roles for landlords, tenants, and administrators, real-time notifications, document management, and a responsive dashboard for tracking rentals, maintenance requests, and financial reports.",
+      "techStack": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery"
+      ],
       "_id": "65b3d9c8d017f6b49c778ca8",
       "enabled": true
     },
@@ -438,10 +486,16 @@
       "sequence": 14,
       "image": {
         "public_id": "ecommerce-platform",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285511679-xe7r9t"
+        "url": "/projects/ecommerce.jpg"
       },
       "description": "Created a modern e-commerce store with React and Next.js frontend, featuring product catalog, shopping cart, secure checkout, and user accounts. Backend built with Node.js and MongoDB includes inventory management, order processing, and Stripe payment integration with 99.9% uptime.",
-      "techStack": ["React.js", "Next.js", "Node.js", "MongoDB", "Stripe API"],
+      "techStack": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "Stripe API"
+      ],
       "_id": "65b3d9c8d017f6b49c778ca7",
       "enabled": true
     },
@@ -452,10 +506,16 @@
       "sequence": 15,
       "image": {
         "public_id": "chat-app",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285468702-igx05q"
+        "url": "/projects/chat-app.jpg"
       },
       "description": "Developed a real-time messaging platform using Socket.io and React that supports direct messages, group chats, file sharing, and message encryption. Implemented JWT authentication, message history, typing indicators, and push notifications with MongoDB for message persistence.",
-      "techStack": ["React.js", "Socket.io", "Express.js", "MongoDB", "JWT"],
+      "techStack": [
+        "React.js",
+        "Socket.io",
+        "Express.js",
+        "MongoDB",
+        "JWT"
+      ],
       "_id": "65b3d99dd017f6b49c778c86",
       "enabled": true
     },
@@ -466,26 +526,18 @@
       "sequence": 13,
       "image": {
         "public_id": "task-management",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285431821-3lfg2r"
+        "url": "/projects/task-management.jpg"
       },
       "description": "Built a Kanban-style task management application with React and Redux featuring drag-and-drop functionality, task categorization, due date reminders, and team collaboration tools. Backend API with Node.js and Express handles user authentication, task persistence, and real-time updates across devices.",
-      "techStack": ["React.js", "Redux", "Node.js", "Express", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "Redux",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "_id": "65b3d978d017f6b49c778c67",
-      "enabled": true
-    },
-    {
-      "liveurl": "#",
-      "githuburl": "#",
-      "title": "Social Media Dashboard",
-      "sequence": 12,
-      "image": {
-        "public_id": "social-media-dashboard",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285416017-wra7swm"
-      },
-      "description": "Designed an analytics dashboard that aggregates data from multiple social media platforms (Twitter, Instagram, Facebook) into a unified interface. Implemented data visualization with Chart.js, scheduled PDF reports, custom metric tracking, and campaign performance analysis for marketing teams.",
-      "techStack": ["React.js", "Next.js", "Chart.js", "Node.js", "MongoDB"],
-      "_id": "65b3d969d017f6b49c778c4a",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -497,9 +549,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285405228-98liol"
       },
       "description": "Developed a HIPAA-compliant healthcare portal that allows patients to schedule appointments, access medical records, and communicate securely with healthcare providers. Implemented two-factor authentication, end-to-end encryption for messages, and audit logging for all data access to ensure regulatory compliance.",
-      "techStack": ["React.js", "Node.js", "Express", "PostgreSQL", "OAuth2"],
+      "techStack": [
+        "React.js",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "OAuth2"
+      ],
       "_id": "65b3d95dd017f6b49c778c2f",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -511,9 +569,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285393568-zl9mcc"
       },
       "description": "Built a headless CMS with React admin interface featuring WYSIWYG editing, image optimization, version control, and scheduled publishing. The system includes granular user permissions, content workflow management, and a RESTful API that powers multiple frontend applications with 20,000+ monthly active users.",
-      "techStack": ["React.js", "Draft.js", "Node.js", "Express", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "Draft.js",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "_id": "65b3d952d017f6b49c778c16",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -525,9 +589,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285378965-91vbk"
       },
       "description": "Created a property marketplace with advanced filtering, interactive map search, and virtual property tours using 360° panoramas. The platform features mortgage calculators, neighborhood analytics (schools, crime rates, amenities), automated listing verification, and a secure messaging system for buyers and agents.",
-      "techStack": ["React.js", "Next.js", "Google Maps API", "Node.js", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "Next.js",
+        "Google Maps API",
+        "Node.js",
+        "MongoDB"
+      ],
       "_id": "65b3d943d017f6b49c778bff",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -539,9 +609,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285368529-zdr5fl"
       },
       "description": "Developed a personal finance application with account aggregation from multiple banks, automated expense categorization using machine learning, and investment portfolio tracking. The dashboard presents financial insights through interactive D3.js visualizations and generates monthly budget recommendations based on spending patterns.",
-      "techStack": ["React.js", "D3.js", "Node.js", "Express", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "D3.js",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "_id": "65b3d938d017f6b49c778bea",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -553,9 +629,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285357884-3ja6sw"
       },
       "description": "Built an LMS platform that supports multimedia course content, interactive assessments, and certification generation. The system includes student progress tracking, discussion forums, AI-powered learning recommendations, and integration with video conferencing for live classes. Analytics dashboard provides instructors with detailed student engagement metrics.",
-      "techStack": ["React.js", "Redux", "Node.js", "MongoDB", "AWS S3"],
+      "techStack": [
+        "React.js",
+        "Redux",
+        "Node.js",
+        "MongoDB",
+        "AWS S3"
+      ],
       "_id": "65b3d92ed017f6b49c778bd7",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -567,9 +649,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285347449-dniw0h"
       },
       "description": "Developed a multi-vendor appointment booking platform for service businesses with real-time availability updates, automated email/SMS reminders, and calendar synchronization (Google/Outlook). Implemented a customizable booking widget that can be embedded on any website, along with Stripe payment processing for deposits and full payments.",
-      "techStack": ["Next.js", "React Query", "Node.js", "PostgreSQL", "Stripe"],
+      "techStack": [
+        "Next.js",
+        "React Query",
+        "Node.js",
+        "PostgreSQL",
+        "Stripe"
+      ],
       "_id": "65b3d923d017f6b49c778bc6",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -581,9 +669,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285323287-nt3ya3"
       },
       "description": "Created a SaaS platform that allows users to generate professional portfolio websites without coding. The application features a drag-and-drop interface with 20+ customizable templates, automatic image optimization, SEO tools, domain connection, and analytics. The system uses a serverless architecture for automatic scaling during peak usage.",
-      "techStack": ["React.js", "TailwindCSS", "Node.js", "Express", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "TailwindCSS",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "_id": "65b3d8fed017f6b49c778ba9",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -595,9 +689,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706284852474-gh2ng"
       },
       "description": "Built a weather application using React and Next.js that provides hourly and 7-day forecasts with detailed meteorological data (precipitation probability, wind speed, UV index, etc.). Features include location-based weather detection, animated radar maps, severe weather alerts, and historical weather data comparison with offline functionality.",
-      "techStack": ["React.js", "Next.js", "Weather API", "Geolocation API", "TailwindCSS"],
+      "techStack": [
+        "React.js",
+        "Next.js",
+        "Weather API",
+        "Geolocation API",
+        "TailwindCSS"
+      ],
       "_id": "65b3d734313a9b09a24a14a3",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -609,9 +709,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706284839761-ckccdj"
       },
       "description": "Developed a specialized job marketplace connecting tech professionals with remote opportunities. Features include AI-powered resume parsing, skill matching algorithms, automated application tracking, employer verification, and detailed analytics for both job seekers and companies. The platform processes over 500 job applications daily with a 40% placement rate.",
-      "techStack": ["React.js", "Next.js", "Node.js", "Express", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "_id": "65b3d728313a9b09a24a1498",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -623,9 +729,16 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706284824843-56iakg"
       },
       "description": "Built a recipe sharing platform that automatically calculates nutritional information from ingredients. Features include recipe scaling, meal planning calendar, shopping list generation, and dietary restriction filtering (gluten-free, vegetarian, etc.). Social features allow users to follow chefs, save favorites, and participate in cooking challenges with 15,000+ active community members.",
-      "techStack": ["React.js", "Next.js", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+      "techStack": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "TailwindCSS"
+      ],
       "_id": "65b3d719313a9b09a24a148f",
-      "enabled": true
+      "enabled": false
     },
     {
       "liveurl": "#",
@@ -637,9 +750,15 @@
         "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706284812399-jr7rqj"
       },
       "description": "Created a comprehensive budgeting application that syncs with bank accounts and automatically categorizes transactions using NLP algorithms. The application generates personalized financial insights, tracks spending patterns, sets savings goals with progress tracking, and provides investment recommendations based on risk profile and financial objectives.",
-      "techStack": ["React.js", "Next.js", "Node.js", "Express", "MongoDB"],
+      "techStack": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "_id": "65b3d70d313a9b09a24a1488",
-      "enabled": true
+      "enabled": false
     }
   ],
   "social_handles": [
@@ -799,58 +918,14 @@
   "testimonials": [
     {
       "image": {
-        "public_id": "portfolio3/1710357726628-c4dr18.png",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357726628-c4dr18.png"
+        "public_id": "portfolio3/d059e79c-5fd5-428f-a582-4b6e57fd14e7.png",
+        "url": "/uploads/d059e79c-5fd5-428f-a582-4b6e57fd14e7.png"
       },
-      "name": "Samantha Wu",
-      "review": "I had the pleasure of working closely with Arone on a challenging project. He is a highly skilled developer who consistently delivered excellent results. His ability to understand complex requirements and implement efficient solutions was truly impressive. I would highly recommend him to any organization looking for a talented developer.",
-      "position": "Software Engineer",
+      "name": "Test",
+      "review": "Test Me!!!!!",
+      "position": "Test111111",
       "enabled": true,
-      "_id": "65f1fcdf0556c3f887e9d74c"
-    },
-    {
-      "image": {
-        "public_id": "portfolio3/1710357705657-aimydg.png",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357705657-aimydg.png"
-      },
-      "name": "David Rodriguez",
-      "review": "Throughout our project, Arone demonstrated exceptional technical skills and a strong work ethic. He consistently met deadlines and produced high-quality code that exceeded our expectations. His proactive approach to problem-solving and effective communication made him a valuable member of our team\n",
-      "position": "Project Manager",
-      "enabled": true,
-      "_id": "65f1fcca0556c3f887e9d6e8"
-    },
-    {
-      "image": {
-        "public_id": "portfolio3/1710357683739-tqeav.png",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357683739-tqeav.png"
-      },
-      "name": " Emily Chen",
-      "review": "I had the pleasure of collaborating with Arone on a complex web application project. His ability to translate design concepts into functional, user-friendly features was impressive. Arone consistently delivered high-quality work and was always open to feedback. I look forward to working with him again in the future.\n\n",
-      "position": " Emily Chen",
-      "enabled": true,
-      "_id": "65f1fcb30556c3f887e9d662"
-    },
-    {
-      "image": {
-        "public_id": "portfolio3/1710357647030-pi5cis.png",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357647030-pi5cis.png"
-      },
-      "name": " Michael Lee",
-      "review": "Arone is a skilled developer with a keen eye for detail. He played a crucial role in our team, consistently producing clean, efficient code. His collaborative nature and willingness to take on new challenges make him an invaluable asset to any project.\"",
-      "position": " Lead Developer",
-      "enabled": true,
-      "_id": "65f1fc8f0556c3f887e9d4e5"
-    },
-    {
-      "image": {
-        "public_id": "portfolio3/1710357534893-2s9b5d.png",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357534893-2s9b5d.png"
-      },
-      "name": "Sarah Johnson",
-      "review": "Working with Arone was an absolute delight. Their professionalism and technical prowess were evident from day one. He consistently delivered top-notch code and went above and beyond to ensure the success of our project. I highly recommend him for any development endeavor",
-      "position": " Product Manager",
-      "enabled": true,
-      "_id": "65f1fc1f0556c3f887e9d31d"
+      "_id": "5f449ae9-fb96-4095-aa0d-b43ef62732a3"
     }
   ],
   "createdAt": "2024-01-26T12:14:36.514Z",

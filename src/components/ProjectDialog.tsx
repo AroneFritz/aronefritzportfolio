@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "motion/react";
 
 import { Project } from "../utils/interface";
-import { ExternalLink, Github, XMark } from "./ui/Icons";
+import { ChevronLeft, ChevronRight, ExternalLink, Github, XMark } from "./ui/Icons";
 
 interface DialogProps {
   selectedProject: Project;
@@ -16,9 +16,31 @@ const ProjectDialog = ({
   selectedProject,
   setSelectedProject,
 }: DialogProps) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const hasMultipleImages = selectedProject.images && selectedProject.images.length > 1;
+
   const handleClose = () => {
     setSelectedProject(null);
   };
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (hasMultipleImages) {
+      setCurrentImageIndex((prev) => (prev + 1) % selectedProject.images!.length);
+    }
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (hasMultipleImages) {
+      setCurrentImageIndex((prev) => (prev - 1 + selectedProject.images!.length) % selectedProject.images!.length);
+    }
+  };
+
+  // Get the current image URL
+  const currentImageUrl = hasMultipleImages 
+    ? selectedProject.images![currentImageIndex].url 
+    : selectedProject.image.url;
 
   return (
     <motion.div
@@ -49,16 +71,57 @@ const ProjectDialog = ({
           >
             <XMark />
           </motion.button>
-          <motion.img
-            src={selectedProject.image.url}
-            width={300}
-            height={300}
-            alt={selectedProject.title}
-            className="w-full h-full aspect-video md:aspect-[12/6] object-cover object-center"
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          />
+          
+          {/* Image with slider arrows */}
+          <div className="relative">
+            <motion.img
+              src={currentImageUrl}
+              width={300}
+              height={300}
+              alt={selectedProject.title}
+              className="w-full h-full aspect-video md:aspect-[12/6] object-cover object-center"
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
+            
+            {/* Image navigation arrows */}
+            {hasMultipleImages && (
+              <>
+                <div 
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-3 rounded-full cursor-pointer z-20"
+                  onClick={prevImage}
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </div>
+                <div 
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-3 rounded-full cursor-pointer z-20"
+                  onClick={nextImage}
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </div>
+                
+                {/* Image indicator dots */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                  {selectedProject.images!.map((_, index) => (
+                    <motion.div 
+                      key={index}
+                      className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-white' : 'bg-white/50'}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 + index * 0.1 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex(index);
+                      }}
+                      style={{ cursor: 'pointer' }}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          
           <div className="p-5 md:p-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <h5 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
