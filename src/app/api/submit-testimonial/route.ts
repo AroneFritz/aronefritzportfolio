@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     let imageUrl = "/profile-icon.png";
     let publicId = "default/profile-icon";
     
-    // If an image was uploaded, process it with Cloudinary
+    // If an image was uploaded, try to process it with Cloudinary
     if (imageFile) {
       try {
         // Convert the file to ArrayBuffer
@@ -34,18 +34,18 @@ export async function POST(req: NextRequest) {
         // Generate a unique ID for the image
         const imageId = uuidv4();
         
-        // Upload to Cloudinary
+        // Try to upload to Cloudinary (or get placeholder if it fails)
         const result = await uploadImage(bytes, {
           folder: 'testimonials',
           public_id: imageId
         });
         
-        // Update image info with Cloudinary URLs
+        // Update image info with result URLs
         imageUrl = result.secure_url;
         publicId = result.public_id;
       } catch (error) {
-        console.error('Error uploading image:', error);
-        // Continue with default image if upload fails
+        console.error('Error processing image:', error);
+        // Continue with default image
       }
     }
 
@@ -72,4 +72,4 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}
