@@ -49,6 +49,14 @@ const TestimonialForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Validate review length
+    if (formData.review.length < 20) {
+      setStatus("ERROR");
+      setStatusText("Please provide a more detailed review (at least 20 characters)");
+      return;
+    }
+    
     setStatus("SENDING");
 
     try {
