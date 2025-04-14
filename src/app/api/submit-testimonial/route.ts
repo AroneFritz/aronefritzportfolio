@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { connectToDatabase, Testimonial } from '@/utils/models';
+import { uploadImage } from '@/utils/cloudinary';
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,11 +25,28 @@ export async function POST(req: NextRequest) {
     let imageUrl = "/profile-icon.png";
     let publicId = "default/profile-icon";
     
+    // If an image was uploaded, process it with Cloudinary
     if (imageFile) {
-      // In a real application, you would upload this to a cloud service
-      // For now, we're using a placeholder image
-      imageUrl = "/profile-icon.png";
-      publicId = `temp_upload_${uuidv4()}`;
+      try {
+        // Convert the file to ArrayBuffer
+        const bytes = await imageFile.arrayBuffer();
+        
+        // Generate a unique ID for the image
+        const imageId = uuidv4();
+        
+        // Upload to Cloudinary
+        const result = await uploadImage(bytes, {
+          folder: 'testimonials',
+          public_id: imageId
+        });
+        
+        // Update image info with Cloudinary URLs
+        imageUrl = result.secure_url;
+        publicId = result.public_id;
+      } catch (error) {
+        console.error('Error uploading image:', error);
+        // Continue with default image if upload fails
+      }
     }
 
     // Create a new testimonial in the database
