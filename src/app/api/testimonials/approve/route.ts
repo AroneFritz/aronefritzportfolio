@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { connectToDatabase, Testimonial } from '@/utils/models';
 
 export async function POST(req: NextRequest) {
   try {
+    // Connect to the database
+    await connectToDatabase();
+    
     const body = await req.json();
     const { id } = body;
 
@@ -14,31 +16,25 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Read the current dummy.json file
-    const filePath = path.join(process.cwd(), 'src', 'dummy.json');
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const jsonData = JSON.parse(fileContent);
-
-    // Find and update the testimonial
-    const testimonialIndex = jsonData.testimonials.findIndex(
-      (t: any) => t._id === id
+    // Find and update the testimonial in MongoDB
+    const updatedTestimonial = await Testimonial.findByIdAndUpdate(
+      id,
+      { enabled: true },
+      { new: true } // Return the updated document
     );
 
-    if (testimonialIndex === -1) {
+    if (!updatedTestimonial) {
       return NextResponse.json(
         { error: 'Testimonial not found' },
         { status: 404 }
       );
     }
 
-    // Update the enabled status
-    jsonData.testimonials[testimonialIndex].enabled = true;
-
-    // Write the updated data back to the file
-    fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2), 'utf8');
-
     return NextResponse.json(
-      { message: 'Testimonial approved successfully' },
+      { 
+        message: 'Testimonial approved successfully',
+        testimonial: updatedTestimonial
+      },
       { status: 200 }
     );
   } catch (error) {

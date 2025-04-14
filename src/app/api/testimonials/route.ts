@@ -1,16 +1,16 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { connectToDatabase, Testimonial } from '@/utils/models';
 
 export async function GET() {
   try {
-    // Read the current dummy.json file
-    const filePath = path.join(process.cwd(), 'src', 'dummy.json');
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const jsonData = JSON.parse(fileContent);
+    // Connect to the database
+    await connectToDatabase();
+    
+    // Fetch testimonials from MongoDB - add empty filter object {}
+    const testimonials = await Testimonial.find({}).sort({ createdAt: -1 });
 
     return NextResponse.json(
-      { testimonials: jsonData.testimonials },
+      { testimonials },
       { status: 200 }
     );
   } catch (error) {
@@ -20,4 +20,4 @@ export async function GET() {
       { status: 500 }
     );
   }
-} 
+}

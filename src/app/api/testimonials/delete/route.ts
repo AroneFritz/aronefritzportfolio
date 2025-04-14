@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { connectToDatabase, Testimonial } from '@/utils/models';
 
 export async function DELETE(req: NextRequest) {
   try {
+    // Connect to the database
+    await connectToDatabase();
+    
     const body = await req.json();
     const { id } = body;
 
@@ -14,31 +16,21 @@ export async function DELETE(req: NextRequest) {
       );
     }
 
-    // Read the current dummy.json file
-    const filePath = path.join(process.cwd(), 'src', 'dummy.json');
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const jsonData = JSON.parse(fileContent);
+    // Find and delete the testimonial from MongoDB
+    const deletedTestimonial = await Testimonial.findByIdAndDelete(id);
 
-    // Find the testimonial
-    const testimonialIndex = jsonData.testimonials.findIndex(
-      (t: any) => t._id === id
-    );
-
-    if (testimonialIndex === -1) {
+    if (!deletedTestimonial) {
       return NextResponse.json(
         { error: 'Testimonial not found' },
         { status: 404 }
       );
     }
 
-    // Remove the testimonial
-    jsonData.testimonials.splice(testimonialIndex, 1);
-
-    // Write the updated data back to the file
-    fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2), 'utf8');
-
     return NextResponse.json(
-      { message: 'Testimonial deleted successfully' },
+      { 
+        message: 'Testimonial deleted successfully',
+        testimonial: deletedTestimonial
+      },
       { status: 200 }
     );
   } catch (error) {
