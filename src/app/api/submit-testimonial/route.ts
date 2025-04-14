@@ -2,6 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { connectToDatabase, Testimonial } from '@/utils/models';
 
+// Dynamic import to prevent build errors
+let uploadImage: any = null;
+try {
+  // We use a dynamic import to prevent build-time errors
+  import('@/utils/cloudinary').then(module => {
+    uploadImage = module.uploadImage;
+  }).catch(err => {
+    console.error('Error importing cloudinary module:', err);
+  });
+} catch (error) {
+  console.warn('Error setting up cloudinary import:', error);
+}
+
 export async function POST(req: NextRequest) {
   try {
     // Connect to the database
@@ -20,10 +33,32 @@ export async function POST(req: NextRequest) {
       );
     }
     
-    // Use default profile icon for all testimonials for now
-    const imageUrl = "/profile-icon.png";
-    const publicId = `default_${uuidv4()}`;
+    // Set default profile icon path
+    let imageUrl = "/profile-icon.png";
+    let publicId = `default_${uuidv4()}`;
     
+    // If an image was uploaded and uploadImage is available, try to process it
+    if (imageFile && uploadImage) {
+      try {
+        // Convert the file to ArrayBuffer
+        const bytes = await imageFile.arrayBuffer();
+        
+        // Try to upload to Cloudinary
+        const result = await uploadImage(bytes, {
+          folder: 'testimonials',
+          public_id: uuidv4()
+        });
+        
+        if (result && result.secure_url) {
+          imageUrl = result.secure_url;
+          publicId = result.public_id || publicId;
+        }
+      } catch (error) {
+        console.error('Error processing image:', error);
+        // Continue with default image
+      }
+    }
+
     // Create a new testimonial in the database
     const newTestimonial = await Testimonial.create({
       name,
