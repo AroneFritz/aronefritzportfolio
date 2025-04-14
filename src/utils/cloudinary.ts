@@ -9,9 +9,9 @@ try {
   
   // Configure Cloudinary
   cloudinary.config({
-    cloud_name: process.env.dqjw2azfx,
-    api_key: process.env.186139851725157,
-    api_secret: process.env.MgAhEdqNfQDwbiSDFk6nAdDeEqk,
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
   });
   
   isCloudinaryAvailable = true;
