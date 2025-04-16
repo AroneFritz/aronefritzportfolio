@@ -23,6 +23,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
     "IDLE"
   );
   const [statusText, setStatusText] = useState("");
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -261,7 +262,44 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
               </Transition>
             </div>
           </form>
-          <div className="md:justify-self-end flex flex-col">
+
+          {/* 3D Robot Model from Spline */}
+          <div className="hidden md:block relative h-[650px] -mt-32">
+            <motion.div 
+              className="w-full h-full relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* The overflow-hidden container to hide the watermark */}
+              <div className="w-full h-full overflow-hidden relative rounded-xl">
+                {/* Position iframe to hide the bottom watermark */}
+                <div className="absolute inset-0" style={{ height: 'calc(100% + 400px)', transform: 'translateY(-300px)' }}>
+                  <iframe 
+                    src='https://my.spline.design/robotfollowcursorforlandingpage-poOj8ffvTswd2crdBRQOhz3a/' 
+                    frameBorder='0' 
+                    width='100%' 
+                    height='100%'
+                    title="3D Robot Contact"
+                    onLoad={() => setIframeLoaded(true)}
+                    style={{ pointerEvents: 'auto' }}
+                  />
+                </div>
+              </div>
+              
+              {/* Loading placeholder */}
+              {!iframeLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Contact information - now in a separate full-width div */}
+        <div className="w-full flex justify-center mt-16">
+          <div className="flex flex-col items-center text-center max-w-md">
             <div className="pb-4">
               <Transition>
                 <span className="text-white/90">Get in touch</span>
@@ -279,7 +317,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
               </Transition>
             </div>
 
-            <div className="flex md:gap-8 gap-4 mt-auto md:pb-16">
+            <div className="flex md:gap-8 gap-4 mt-4 mb-8 justify-center">
               {filteredSocial.map((social, index) =>
                 social.enabled ? (
                   <Transition
@@ -302,12 +340,13 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
           </div>
         </div>
       </div>
-      <footer className="flex items-center justify-between md:px-8 px-2 py-4 text-sm">
+
+      <footer className="flex items-center justify-center md:px-8 px-2 py-4 text-sm">
         <Transition>
-          <div>&copy; 2024 ThePortfolio</div>
+          <div className="text-center">&copy; 2025 ThePortfolio</div>
         </Transition>
         <Transition>
-          <p>
+          <p className="ml-auto mr-auto text-center">
             developed by @
             <Link
               href={""}
