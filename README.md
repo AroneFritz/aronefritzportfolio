@@ -1,6 +1,6 @@
 # Arone Fritz Portfolio | Web Stack Developer
 
-![Arone Fritz Portfolio](https://github.com/AroneFritz/aronefritzportfolio/raw/main/public/Arone-Fritz.png)
+![Arone Fritz Portfolio](https://github.com/AroneFritz/aronefritzportfolio/raw/main/public/AroneFritz2.png)
 
 ## Overview
 
