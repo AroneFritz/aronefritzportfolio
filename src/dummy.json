@@ -924,7 +924,7 @@
       "name": "AroneFritz",
       "review": "Test",
       "position": "Freelancer",
-      "enabled": true,
+      "enabled": false,
       "_id": "ec4168d4-5a03-48d4-be54-06c7b68ccd27"
     }
   ],
