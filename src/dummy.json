@@ -455,16 +455,16 @@
       "sequence": 16,
       "image": {
         "public_id": "rental-management",
-        "url": "/projects/rentease.png"
+        "url": "/projects/propertyhub.png"
       },
       "images": [
         {
           "public_id": "rental-management",
-          "url": "/projects/rentease.png"
+          "url": "/projects/propertyhub-2.png"
         },
         {
           "public_id": "rental-management-2",
-          "url": "/projects/rentease2.png"
+          "url": "/projects/propertyhub-3.png"
         }
       ],
       "description": "Developed a comprehensive property rental management system using Laravel and PHP that simplifies property listings, tenant applications, lease management, and payment processing. Implemented secure user roles for landlords, tenants, and administrators, real-time notifications, document management, and a responsive dashboard for tracking rentals, maintenance requests, and financial reports.",
