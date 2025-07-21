@@ -17,14 +17,13 @@ interface HeroProps {
 
 const Hero = ({ about }: HeroProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       // Calculate normalized mouse position (0-1)
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
-      
+
       setMousePosition({ x, y });
     };
 
@@ -35,7 +34,7 @@ const Hero = ({ about }: HeroProps) => {
   // Calculate transforms based on mouse position (px values)
   const blob1X = (mousePosition.x - 0.5) * -40; // Move opposite to cursor
   const blob1Y = (mousePosition.y - 0.5) * -40;
-  
+
   const blob2X = (mousePosition.x - 0.5) * 60; // Move with cursor but more dramatically
   const blob2Y = (mousePosition.y - 0.5) * 60;
 
@@ -67,19 +66,19 @@ const Hero = ({ about }: HeroProps) => {
         />
       </Transition>
       <LoaderWrapper>
-        <div className="relative h-full w-full flex flex-col md:flex-row items-center">
-          {/* Left side with text content */}
-          <div className="flex items-center justify-center flex-col h-full md:w-1/2 md:items-start md:justify-center md:pl-16 lg:pl-24">
+        <div className="relative h-full w-full flex flex-col items-center justify-center">
+          {/* Centered content */}
+          <div className="flex items-center justify-center flex-col h-full w-full max-w-4xl px-4">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ 
+              transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 15,
                 delay: 0.5
               }}
-              className="mb-6 md:self-start md:ml-72"
+              className="mb-6"
             >
               <motion.img
                 src={about.avatar.url}
@@ -89,18 +88,18 @@ const Hero = ({ about }: HeroProps) => {
                 transition={{ duration: 0.3 }}
               />
             </motion.div>
-            <div className="flex flex-col items-center md:items-start mb-6">
-              <h2 className="md:text-7xl text-4xl font-bold overflow-hidden text-center md:text-left">
+            <div className="flex flex-col items-center text-center mb-6">
+              <h2 className="md:text-7xl text-4xl font-bold overflow-hidden">
                 <SlideIn>Hello! I&apos;m {about.name}</SlideIn>
               </h2>
-              <h1 className="md:text-7xl text-3xl overflow-hidden bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent text-center md:text-left">
+              <h1 className="md:text-7xl text-3xl overflow-hidden bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
                 <SlideIn>{about.title}</SlideIn>
               </h1>
             </div>
-            <Transition viewport={{ once: true }} className="w-full">
-              <p className="opacity-70 md:text-xl py-4 w-10/12 md:w-4/5 text-center md:text-left">
+            <Transition viewport={{ once: true }} className="w-full max-w-2xl">
+              <p className="opacity-70 md:text-xl py-4 text-center">
                 {about.subTitle.split(" ").map((word, index) => (
-                  <motion.span 
+                  <motion.span
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -133,39 +132,6 @@ const Hero = ({ about }: HeroProps) => {
                 </Link>
               </motion.div>
             </Transition>
-          </div>
-          
-          {/* Right side with Spline 3D Robot */}
-          <div className="hidden md:flex items-center justify-center h-full md:w-1/2 relative">
-            <motion.div 
-              className="w-full h-full relative"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* The overflow-hidden container to hide the watermark */}
-              <div className="w-full h-full overflow-hidden relative">
-                {/* Position iframe to hide the bottom watermark */}
-                <div className="absolute inset-0" style={{ height: 'calc(100% + 200px)', transform: 'translateY(-140px)' }}>
-                  <iframe 
-                    src='https://my.spline.design/robotfollowcursorforlandingpagemc-qYp8ZWk5rP1e4fwp3yXbVGZo/' 
-                    frameBorder='0' 
-                    width='100%' 
-                    height='100%'
-                    title="3D Robot"
-                    onLoad={() => setIframeLoaded(true)}
-                    style={{ pointerEvents: 'auto' }}
-                  />
-                </div>
-              </div>
-              
-              {/* Loading placeholder */}
-              {!iframeLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-                </div>
-              )}
-            </motion.div>
           </div>
           
           {/* Animated down arrow indicator */}
