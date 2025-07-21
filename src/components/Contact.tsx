@@ -23,7 +23,6 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
     "IDLE"
   );
   const [statusText, setStatusText] = useState("");
-  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -150,11 +149,11 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
           <SlideIn className="text-white/40">Interested in talking,</SlideIn>{" "}
           <br /> <SlideIn>let&apos;s do it.</SlideIn>
         </SectionHeading>
-        <div className="grid md:grid-cols-2 gap-10 md:pt-16">
+        <div className="max-w-2xl mx-auto md:pt-16">
           <form className="space-y-8" onSubmit={handleSubmit}>
             {/* Honeypot field to prevent spam */}
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
-            
+
             <div className="flex flex-col md:flex-row gap-4">
               <Transition className="w-full">
                 <div className="relative group">
@@ -167,7 +166,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
                     value={formData.name}
                     onChange={handleInputChange}
                   />
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-0 left-0 h-[2px] bg-primary"
                     initial={{ width: 0 }}
                     whileInView={{ width: formData.name ? '100%' : 0 }}
@@ -187,7 +186,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
                     value={formData.email}
                     onChange={handleInputChange}
                   />
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-0 left-0 h-[2px] bg-primary"
                     initial={{ width: 0 }}
                     whileInView={{ width: formData.email ? '100%' : 0 }}
@@ -208,7 +207,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
                     value={formData.subject}
                     onChange={handleInputChange}
                   />
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-0 left-0 h-[2px] bg-primary"
                     initial={{ width: 0 }}
                     whileInView={{ width: formData.subject ? '100%' : 0 }}
@@ -229,7 +228,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
                     value={formData.message}
                     onChange={handleInputChange}
                   />
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-0 left-0 h-[2px] bg-primary"
                     initial={{ width: 0 }}
                     whileInView={{ width: formData.message ? '100%' : 0 }}
@@ -244,7 +243,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   initial={{ opacity: 0.9 }}
-                  animate={{ 
+                  animate={{
                     opacity: status === "SENDING" ? 0.7 : 1,
                     y: [0, status === "SENDING" ? -2 : 0, 0],
                     transition: {
@@ -262,39 +261,6 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
               </Transition>
             </div>
           </form>
-
-          {/* 3D Robot Model from Spline */}
-          <div className="hidden md:block relative h-[650px] -mt-32">
-            <motion.div 
-              className="w-full h-full relative"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* The overflow-hidden container to hide the watermark */}
-              <div className="w-full h-full overflow-hidden relative rounded-xl">
-                {/* Position iframe to hide the bottom watermark */}
-                <div className="absolute inset-0" style={{ height: 'calc(100% + 400px)', transform: 'translateY(-300px)' }}>
-                  <iframe 
-                    src='https://my.spline.design/robotfollowcursorforlandingpage-poOj8ffvTswd2crdBRQOhz3a/' 
-                    frameBorder='0' 
-                    width='100%' 
-                    height='100%'
-                    title="3D Robot Contact"
-                    onLoad={() => setIframeLoaded(true)}
-                    style={{ pointerEvents: 'auto' }}
-                  />
-                </div>
-              </div>
-              
-              {/* Loading placeholder */}
-              {!iframeLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-                </div>
-              )}
-            </motion.div>
-          </div>
         </div>
 
         {/* Contact information - now in a separate full-width div */}
