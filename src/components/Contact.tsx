@@ -145,7 +145,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
       </AnimatePresence>
       <span className="blob size-1/2 absolute top-20 right-0 blur-[100px] -z-10" />
       <div className="p-4 md:p-8 md:px-16">
-        <SectionHeading className="">
+        <SectionHeading className="text-center">
           <SlideIn className="text-white/40">Interested in talking,</SlideIn>{" "}
           <br /> <SlideIn>let&apos;s do it.</SlideIn>
         </SectionHeading>
